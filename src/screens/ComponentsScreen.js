@@ -3,7 +3,9 @@ import {StyleSheet, View, Text} from 'react-native';
 
 const ComponentsScreen = () => {
     return (
-        <Text style={styles.textStyle}>This is the Components Screen</Text>
+        <View>
+            <Text style={styles.textStyle}>This is the Components Screen</Text>
+        </View>
     );
 };
 
