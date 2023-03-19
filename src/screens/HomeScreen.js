@@ -1,11 +1,11 @@
 import React from "react";
 import { Text, StyleSheet } from "react-native";
-import ComponentsScreen from "./ComponentsScreen";
+
 
 const HomeScreen = () => {
   return (
-  <ComponentsScreen />
-    )
+  <Text>This is the Home Screen!</Text>
+    );
 };
 
 const styles = StyleSheet.create({
