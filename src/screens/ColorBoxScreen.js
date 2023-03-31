@@ -6,7 +6,7 @@ import {RED_CHANGE, GREEN_CHANGE, BLUE_CHANGE} from '../reducers/ColorReducer';
 
 const ColorBoxScreen = () => {
     const initialState = {
-        red: 2, 
+        red: 255, 
         blue: 255, 
         green: 255
     }
@@ -24,12 +24,11 @@ const ColorBoxScreen = () => {
                 <Text>Your Random Color</Text>
             </View>
             <ColorButtonComponent title="Increase Red" pressFunction={() => dispatch(RED_CHANGE(15))}/>
-            {/* <ColorButtonComponent title="Increase Red" pressFunction={() => setRed(red + 20 < 255 ? red + 10 : 255)}/>
-            <ColorButtonComponent title="Decrease Red" pressFunction={() => setRed(red - 20 > 0 ? red - 10 : 0)}/>
-            <ColorButtonComponent title="Increase Green" pressFunction={() => setGreen(green + 20 < 255 ? green + 20 : 255)}/>
-            <ColorButtonComponent title="Decrease Green" pressFunction={() => setGreen(green - 20 > 0 ? green - 20 : 0)}/>
-            <ColorButtonComponent title="Increase Blue" pressFunction={() => setBlue(blue + 20 < 255 ? blue + 20 : 255)}/>
-            <ColorButtonComponent title="Decrease Blue" pressFunction={() => setBlue(blue - 20 > 0 ? blue - 20 : 0)}/> */}
+            <ColorButtonComponent title="Decrease Red" pressFunction={() => dispatch(RED_CHANGE(-15))}/>
+            <ColorButtonComponent title="Increase Green" pressFunction={() => dispatch(GREEN_CHANGE(15))}/>
+            <ColorButtonComponent title="Decrease Green" pressFunction={() => dispatch(GREEN_CHANGE(-15))}/>
+            <ColorButtonComponent title="Increase Blue" pressFunction={() => dispatch(BLUE_CHANGE(15))}/>
+            <ColorButtonComponent title="Decrease Blue" pressFunction={() => dispatch(BLUE_CHANGE(-15))}/>
         </View>
     )
 };

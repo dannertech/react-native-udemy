@@ -1,32 +1,42 @@
 const reducer = (state,action) => {
     switch(action.type){
         case 'red':
+            console.log(state.red)
             //red code
             let redState = state.red
-            console.log(redState);
-            if(redState + action.payload < 255 && redState + action.payload >= 0){
+            if(redState + action.payload > 255 || redState + action.payload < 0){
+                return state;
+            } else {
                 return {
                     ...state,
                     red: redState + action.payload
                 }
-            } else {
-                return state;
             }
             
         case 'green':
             //green code
             let greenState = state.green;
-            return {
-                ...state,
-                green: greenState + action.payload
+            if(greenState + action.payload > 255 || greenState + action.payload < 0){
+                return state;
+            } else {
+                return {
+                    ...state,
+                    green: greenState + action.payload
+                }
             }
+           
         case 'blue':
             //blue code
             let blueState = state.blue;
-            return {
-                ...state,
-                blue: blueState + action.payload
+            if(blueState + action.payload > 255 || greenState + action.payload < 0){
+                return state;
+            } else {
+                return {
+                    ...state,
+                    blue: blueState + action.payload
+                }
             }
+            
         default:
             return state
     }
@@ -36,11 +46,11 @@ const reducer = (state,action) => {
 export const RED_CHANGE = (payload) => {
     return {
         type: 'red',
-        payload: payload
+        payload
     }
 };
 
-export const GREEN_CHANGE = () => {
+export const GREEN_CHANGE = (payload) => {
     return {
         type: 'green',
         payload
