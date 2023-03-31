@@ -1,19 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useReducer} from 'react';
 import {StyleSheet, View, Text, Button} from 'react-native';
 import CounterButton from '../Components/CounterButton';
+import reducer from '../reducers/CounterReducer';
 
 const CounterScreen = () => {
-    const [counter, setCounter] = useState(0);
+    const [state, dispatch] = useReducer(reducer, {counter: 0})
 
-    function changeCounterValue(num){
-        setCounter(counter + (num));
-        console.log(counter);
-    }
+    
     return (
         <View>
-            <CounterButton title="Increase" counterFunction={() => changeCounterValue(1)}/>
-            <CounterButton title="Decrease" counterFunction={() => changeCounterValue(-1)}/>
-           <Text style={styles.counterText}>{counter}</Text>
+            <CounterButton title="Increase" counterFunction={() => dispatch({type: 'ADD', payload: 1})}/>
+            <CounterButton title="Decrease" counterFunction={() => dispatch({type: 'SUBTRACT', payload: -1})}/>
+           <Text style={styles.counterText}>{state.counter}</Text>
         </View>
     )
 };
