@@ -6,7 +6,7 @@ const TextScreen = () => {
     return (
         <View>
             <Text>Enter Name:</Text>
-            <TextInput placeholder='Name' autoCapitalize='false' autoCorrect={false} onChange={(text) => setName(text)} style={styles.input}/>
+            <TextInput value={name} autoCapitalize='none' autoCorrect={false} style={styles.input} onChange={(text) => setName(text)}/>
         </View>
     )
 };
