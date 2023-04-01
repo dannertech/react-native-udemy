@@ -5,6 +5,7 @@ const TextScreen = () => {
     return (
         <View>
             <Text>Enter Name:</Text>
+            <TextInput placeholder='Name'/>
         </View>
     )
 };
